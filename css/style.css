@@ -1,4 +1,4 @@
-/* ===== CSS VARIABLES (ТЕМНА ТЕМА) ===== */
+/*#region CSS VARIABLES (ТЕМНА ТЕМА) */
 :root {
     /* Темна тема - основні кольори */
     --bg-primary: #1a202c;          /* Темний основний фон */
@@ -14,8 +14,9 @@
     --shadow: rgba(0,0,0,0.3);     /* Темні тіні */
     --shadow-hover: rgba(0,0,0,0.4); /* Темні тіні при наведенні */
 }
+/*#endregion */
 
-/* ===== БАЗОВІ СТИЛІ (RESET) ===== */
+/*#region БАЗОВІ СТИЛІ (RESET) */
 * {
     margin: 0;
     padding: 0;
@@ -28,8 +29,9 @@ body {
     color: var(--text-secondary);   /* Використовуємо CSS змінну */
     background-color: var(--bg-primary);
 }
+/*#endregion */
 
-/* ===== ХЕДЕР (ШАПКА САЙТУ) ===== */
+/*#region ХЕДЕР (ШАПКА САЙТУ) */
 header {
     background: var(--bg-secondary);
     padding: 1.5rem 0;              /* Вертикальні відступи */
@@ -98,8 +100,9 @@ nav a::after {
 nav a:hover::after {
     width: 100%;                    /* Повна ширина при наведенні */
 }
+/*#endregion */
 
-/* ===== ОСНОВНИЙ КОНТЕНТ ===== */
+/*#region ОСНОВНИЙ КОНТЕНТ */
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -146,8 +149,9 @@ main {
     transform: translateY(-2px);     /* Підняття кнопки при наведенні */
     box-shadow: 0 6px 12px var(--shadow-hover);
 }
+/*#endregion */
 
-/* ===== СЕКЦІЯ КОНТАКТІВ ===== */
+/*#region СЕКЦІЯ КОНТАКТІВ */
 .contacts-section {
     padding: 4rem 0;
     max-width: 600px;               /* Обмежена ширина для кращого вигляду */
@@ -213,8 +217,9 @@ main {
     font-size: 0.875rem;            /* Менший шрифт для додаткової інформації */
     margin-top: 0.25rem;
 }
+/*#endregion */
 
-/* ===== ФУТЕР (ПІДВАЛ САЙТУ) ===== */
+/*#region ФУТЕР (ПІДВАЛ САЙТУ) */
 footer {
     background: var(--bg-secondary); /* Темний фон для футера */
     color: var(--text-secondary);   /* Світлий текст */
@@ -249,8 +254,9 @@ footer {
     color: var(--text-muted);
     font-size: 0.875rem;
 }
+/*#endregion */
 
-/* ===== ВЕЛИКІ ЕКРАНИ (1920x1080+) ===== */
+/*#region ВЕЛИКІ ЕКРАНИ (1920x1080+) */
 @media (min-width: 1920px) {
     header {
         padding: 2rem 0;
@@ -334,8 +340,9 @@ footer {
         font-size: 1rem;
     }
 }
+/*#endregion */
 
-/* ===== АДАПТИВ ДЛЯ ПЛАНШЕТІВ (768px) ===== */
+/*#region АДАПТИВ ДЛЯ ПЛАНШЕТІВ (768px) */
 @media (max-width: 768px) {
     header {
         padding: 1rem 0;
@@ -380,8 +387,9 @@ footer {
         padding-right: 1rem;
     }
 }
+/*#endregion */
 
-/* ===== АДАПТИВ ДЛЯ МОБІЛЬНИХ (480px) ===== */
+/*#region АДАПТИВ ДЛЯ МОБІЛЬНИХ (480px) */
 @media (max-width: 480px) {
     main {
         padding: 0 1rem;            /* Менші відступи */
@@ -408,3 +416,105 @@ footer {
         font-size: 1.75rem;
     }
 }
+/*#endregion */
+
+/*#region АДАПТИВ ДЛЯ МАЛИХ МОБІЛЬНИХ (320px) */
+@media (max-width: 320px) {
+    header {
+        padding: 0.75rem 0;
+    }
+    
+    header {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .logo a {
+        font-size: 1.25rem;         /* Менший логотип */
+    }
+    
+    nav ul {
+        gap: 0.75rem;               /* Менші відступи між пунктами меню */
+    }
+    
+    nav a {
+        font-size: 0.875rem;        /* Менший шрифт для навігації */
+    }
+    
+    main {
+        padding: 0 0.75rem;         /* Менші відступи */
+    }
+    
+    .main-section {
+        padding: 1.5rem 0;          /* Компактніші відступи */
+    }
+    
+    .main-section h1 {
+        font-size: 1.5rem;          /* Ще менший заголовок */
+        margin-bottom: 1rem;
+    }
+    
+    .main-section p {
+        font-size: 1rem;            /* Менший текст */
+        max-width: 100%;            /* Повна ширина на малих екранах */
+        margin: 0 auto 1.5rem;
+    }
+    
+    .consultation-link {
+        padding: 0.75rem 1.25rem;   /* Компактніша кнопка */
+        font-size: 0.8rem;
+        width: 100%;                /* Повна ширина кнопки */
+        max-width: 280px;           /* Обмеження максимальної ширини */
+    }
+    
+    .contacts-section {
+        padding: 1.5rem 0;
+    }
+    
+    .contacts-section h1 {
+        font-size: 1.5rem;          /* Менший заголовок контактів */
+        margin-bottom: 2rem;
+    }
+    
+    .contact-info {
+        padding: 1rem;              /* Менші відступи в картці */
+    }
+    
+    .contact-item {
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .contact-item strong {
+        font-size: 0.9rem;
+        margin-bottom: 0.25rem;
+    }
+    
+    .contact-item a,
+    .contact-item span {
+        font-size: 0.9rem;
+    }
+    
+    .contact-item small {
+        font-size: 0.75rem;
+    }
+    
+    footer {
+        padding: 1rem 0;
+        margin-top: 2rem;
+    }
+    
+    footer {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    .social-links a {
+        font-size: 0.875rem;
+    }
+    
+    .copyright {
+        font-size: 0.75rem;
+    }
+}
+/*#endregion */
