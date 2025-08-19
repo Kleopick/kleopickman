@@ -20,21 +20,53 @@
         </nav>
     </header>
     <main>
-        <section class="portfolio-section">
-            <h1>Портфоліо</h1>
+        <!-- Основна секція портфоліо -->
+    <section class="portfolio-main">
+        <h1>Портфоліо</h1>
+        
+        <!-- Секція логотипів -->
+        <div class="portfolio-category">
+            <h2>Логотипи</h2>
+            <p class="category-description">Розробила дизайн логотипів для 40+ компаній</p>
             
-            <!-- Контейнер для всіх проектів портфоліо -->
+            <!-- Сітка проектів логотипів -->
             <div class="portfolio-grid">
-                
-                <!-- Проект 1 - кожен проект обгорнутий в article для SEO -->
+                <!-- Проект 1 - логотип -->
                 <article class="portfolio-item">
-                    <!-- Посилання на внутрішню сторінку проекту -->
-                    <a href="/project-1.html" class="portfolio-link">
-                        <!-- Зображення проекту з alt для доступності -->
-                        <img src="project-1-preview.jpg" alt="Назва проекту 1 - превью" class="portfolio-image">
-                        <!-- Заголовок проекту -->
-                        <h3 class="portfolio-title">Назва Проекту 1</h3>
+                    <a href="/logo-project-1.html" class="portfolio-link">
+                        <!-- Зображення логотипу -->
+                        <img src="logo-1-preview.jpg" alt="Логотип компанії 1 - превью" class="portfolio-image">
+                        <h3 class="portfolio-title">Логотип компанії 1</h3>
                         <!-- Теги експертизи -->
+                        <div class="portfolio-tags">
+                            <span class="tag">Branding</span>
+                            <span class="tag">Logo Design</span>
+                            <span class="tag">Graphic Design</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <!-- Coming Soon карточка -->
+                <div class="portfolio-item coming-soon">
+                    <div class="coming-soon-content">
+                        <h3>Coming Soon</h3>
+                        <p>Нові проекти незабаром</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Секція мобільних застосунків -->
+        <div class="portfolio-category">
+            <h2>Мобільні застосунки</h2>
+            <p class="category-description">Створила UX/UI дизайн для 5+ мобільних додатків</p>
+            
+            <div class="portfolio-grid">
+                <!-- Проект мобільного додатку -->
+                <article class="portfolio-item">
+                    <a href="/mobile-app-1.html" class="portfolio-link">
+                        <img src="mobile-app-1-preview.jpg" alt="Мобільний додаток 1 - превью" class="portfolio-image">
+                        <h3 class="portfolio-title">Мобільний додаток 1</h3>
                         <div class="portfolio-tags">
                             <span class="tag">UI дизайн</span>
                             <span class="tag">UX дизайн</span>
@@ -43,34 +75,109 @@
                     </a>
                 </article>
                 
-                <!-- Проект 2 -->
-                <article class="portfolio-item">
-                    <a href="/project-2.html" class="portfolio-link">
-                        <img src="project-2-preview.jpg" alt="Назва проекту 2 - превью" class="portfolio-image">
-                        <h3 class="portfolio-title">Назва Проекту 2</h3>
-                        <div class="portfolio-tags">
-                            <span class="tag">Product Design</span>
-                            <span class="tag">Web Platform</span>
-                            <span class="tag">User Research</span>
-                        </div>
-                    </a>
-                </article>
-                
-                <!-- Проект 3 -->
-                <article class="portfolio-item">
-                    <a href="/project-3.html" class="portfolio-link">
-                        <img src="project-3-preview.jpg" alt="Назва проекту 3 - превью" class="portfolio-image">
-                        <h3 class="portfolio-title">Назва Проекту 3</h3>
-                        <div class="portfolio-tags">
-                            <span class="tag">Graphic Design</span>
-                            <span class="tag">Branding</span>
-                            <span class="tag">UI дизайн</span>
-                        </div>
-                    </a>
-                </article>
-                
+                <!-- Coming Soon -->
+                <div class="portfolio-item coming-soon">
+                    <div class="coming-soon-content">
+                        <h3>Coming Soon</h3>
+                        <p>Нові проекти незабаром</p>
+                    </div>
+                </div>
             </div>
-         </section>
+        </div>
+        
+        <!-- Секція лендінг пейджів -->
+        <div class="portfolio-category">
+            <h2>Лендінг пейдж</h2>
+            <p class="category-description">Розробила дизайн лендінгів для 15+ проектів</p>
+            
+            <div class="portfolio-grid">
+                <!-- Проект лендінгу -->
+                <article class="portfolio-item">
+                    <a href="/landing-1.html" class="portfolio-link">
+                        <img src="landing-1-preview.jpg" alt="Лендінг пейдж 1 - превью" class="portfolio-image">
+                        <h3 class="portfolio-title">Лендінг пейдж 1</h3>
+                        <div class="portfolio-tags">
+                            <span class="tag">UI дизайн</span>
+                            <span class="tag">Web Design</span>
+                            <span class="tag">Landing Page</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <div class="portfolio-item coming-soon">
+                    <div class="coming-soon-content">
+                        <h3>Coming Soon</h3>
+                        <p>Нові проекти незабаром</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Секція інтернет-магазинів -->
+        <div class="portfolio-category">
+            <h2>Інтернет-магазини</h2>
+            <p class="category-description">Створила дизайн для 8+ e-commerce проектів</p>
+            
+            <div class="portfolio-grid">
+                <!-- Проект інтернет-магазину -->
+                <article class="portfolio-item">
+                    <a href="/ecommerce-1.html" class="portfolio-link">
+                        <img src="ecommerce-1-preview.jpg" alt="Інтернет-магазин 1 - превью" class="portfolio-image">
+                        <h3 class="portfolio-title">Інтернет-магазин 1</h3>
+                        <div class="portfolio-tags">
+                            <span class="tag">UI дизайн</span>
+                            <span class="tag">UX дизайн</span>
+                            <span class="tag">E-commerce</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <div class="portfolio-item coming-soon">
+                    <div class="coming-soon-content">
+                        <h3>Coming Soon</h3>
+                        <p>Нові проекти незабаром</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Секція UX аналізу і аудиту -->
+        <div class="portfolio-category">
+            <h2>UX аналіз і аудит</h2>
+            <p class="category-description">Провела UX аудит для 10+ цифрових продуктів</p>
+            
+            <div class="portfolio-grid">
+                <!-- Проект UX аудиту -->
+                <article class="portfolio-item">
+                    <a href="/ux-audit-1.html" class="portfolio-link">
+                        <img src="ux-audit-1-preview.jpg" alt="UX аудит 1 - превью" class="portfolio-image">
+                        <h3 class="portfolio-title">UX аудит 1</h3>
+                        <div class="portfolio-tags">
+                            <span class="tag">UX Research</span>
+                            <span class="tag">UX Audit</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                    </a>
+                </article>
+                
+                <div class="portfolio-item coming-soon">
+                    <div class="coming-soon-content">
+                        <h3>Coming Soon</h3>
+                        <p>Нові проекти незабаром</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA секція (Call To Action - заклик до дії) -->
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Готові почати співпрацю?</h2>
+            <p>Розкажіть про ваш проект і отримайте персональну консультацію щодо дизайну вашого цифрового продукту. Разом ми створимо рішення, яке приверне користувачів та досягне бізнес-цілей.</p>
+            <!-- Кнопка для замовлення консультації -->
+            <a href="/contacts.html" class="cta-button">Замовити консультацію</a>
+        </div>
     </main>
     <footer>
         <div class="social-links">
