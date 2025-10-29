@@ -1,554 +1,156 @@
-/*#region CSS VARIABLES (ТЕМНА ТЕМА) */
-:root {
-    /* Темна тема - основні кольори */
-    --bg-primary: #1a202c;          /* Темний основний фон */
-    --bg-secondary: #2d3748;        /* Темний фон карток */
-    --text-primary: #f7fafc;        /* Світлий основний текст */
-    --text-secondary: #e2e8f0;      /* Світлий другий текст */
-    --text-muted: #a0aec0;          /* Світлий приглушений текст */
-    --accent-color: #63b3ed;        /* Світлий акцентний колір */
-    --accent-hover: #90cdf4;        /* Світлий акцент при наведенні */
-    --accent-bright: #3182ce;       /* Яскравий акцентний колір для кнопок */
-    --accent-bright-hover: #2c5282; /* Яскравий акцент при наведенні */
-    --border-color: #4a5568;        /* Темні рамки */
-    --shadow: rgba(0,0,0,0.3);     /* Темні тіні */
-    --shadow-hover: rgba(0,0,0,0.4); /* Темні тіні при наведенні */
-}
-/*#endregion */
+/* Додати регіони */
 
-/*#region БАЗОВІ СТИЛІ (RESET) */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;         /* Включає padding та border в width */
-}
-
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.6;               /* Висота рядка для кращої читабельності */
-    color: var(--text-secondary);   /* Використовуємо CSS змінну */
-    background-color: var(--bg-primary);
-}
-/*#endregion */
-
-/*#region ХЕДЕР (ШАПКА САЙТУ) */
-header {
-    background: var(--bg-secondary);
-    padding: 1.5rem 0;              /* Вертикальні відступи */
-    box-shadow: 0 2px 10px var(--shadow);
-    position: sticky;                /* Хедер залишається зверху при прокручуванні */
-    top: 0;
-    z-index: 100;                   /* Хедер поверх іншого контенту */
-    width: 100%;                    /* Повна ширина екрану */
-}
-
-/* Контейнер для контенту хедера */
-header {
+/* Контейнер секції досвіду: розміщуємо логотип та контент поруч */
+.experience {
     display: flex;
-    justify-content: space-between; /* Логотип зліва, меню справа */
-    align-items: center;            /* Вертикальне центрування */
-    max-width: 1200px;
-    margin: 0 auto;                 /* Центрування по горизонталі */
-    padding-left: 2rem;
-    padding-right: 2rem;
+    align-items: flex-start; /* вирівнюємо по верхньому краю */
+    gap: 24px; /* відступ між логотипом і контентом */
+    margin-bottom: 40px; /* відступ секції від інших */
 }
 
 /* Логотип */
-.logo a {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: color 0.3s ease;    /* Плавна зміна кольору при наведенні */
+.experience__logo img {
+    width: 70px; /* можна змінити під свій розмір */
+    height: auto;
+    object-fit: contain;
 }
 
-.logo a:hover {
-    color: var(--text-secondary);
-}
-
-/* Навігаційне меню */
-nav ul {
-    display: flex;                  /* Горизонтальне розташування пунктів меню */
-    list-style: none;               /* Прибираємо маркери списку */
-    gap: 2rem;                      /* Відступ між пунктами меню */
-}
-
-nav a {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    position: relative;             /* Для підкреслення при наведенні */
-}
-
-nav a:hover {
-    color: var(--text-primary);
-}
-
-/* Підкреслення пунктів меню при наведенні */
-nav a::after {
-    content: '';                    /* Псевдоелемент для лінії */
-    position: absolute;
-    width: 0;                       /* Початкова ширина 0 */
-    height: 2px;
-    bottom: -4px;                   /* Позиція під текстом */
-    left: 0;
-    background-color: var(--text-primary);
-    transition: width 0.3s ease;    /* Анімація ширини */
-}
-
-nav a:hover::after {
-    width: 100%;                    /* Повна ширина при наведенні */
-}
-/*#endregion */
-
-/*#region ОСНОВНИЙ КОНТЕНТ */
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-}
-
-/* Головна секція */
-.main-section {
-    padding: 4rem 0;
-    text-align: center;
-}
-
-.main-section h1 {
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-    line-height: 1.2;               /* Компактний рядок для заголовків */
-}
-
-.main-section p {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    max-width: 600px;               /* Обмеження ширини для кращої читабельності */
-    margin: 0 auto 2rem;            /* Центрування та відступ знизу */
-    line-height: 1.7;               /* Розширений рядок для параграфів */
-}
-
-/* Кнопка "Замовити консультацію" */
-.consultation-link {
-    display: inline-block;           /* Блоковий елемент, але тільки по контенту */
-    background: var(--accent-bright); /* Яскравий акцентний колір */
-    color: white;                   /* Білий текст для контрасту */
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border-radius: 8px;             /* Закруглені кути */
-    font-weight: 600;
-    transition: all 0.3s ease;      /* Анімація всіх властивостей */
-    box-shadow: 0 4px 6px var(--shadow);
-}
-
-.consultation-link:hover {
-    background: var(--accent-bright-hover); /* Темніший при наведенні */
-    transform: translateY(-2px);     /* Підняття кнопки при наведенні */
-    box-shadow: 0 6px 12px var(--shadow-hover);
-}
-/*#endregion */
-
-/*#region СЕКЦІЯ КОНТАКТІВ */
-.contacts-section {
-    padding: 4rem 0;
-    max-width: 600px;               /* Обмежена ширина для кращого вигляду */
-    margin: 0 auto;
-}
-
-.contacts-section h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-/* Картка з контактами */
-.contact-info {
-    background: var(--bg-secondary);
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px var(--shadow);
-}
-
-/* Окремий контакт */
-.contact-item {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color); /* Розділювач між контактами */
-}
-
-.contact-item:last-child {
-    border-bottom: none;             /* Останній елемент без розділювача */
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.contact-item strong {
-    display: block;                  /* Блоковий елемент для нового рядка */
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-}
-
-.contact-item a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+/* Контейнер з текстом */
+.experience__content {
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 12px; /* відступ між заголовком і списком */
 }
 
-.contact-item a:hover {
-    color: var(--accent-hover);
-    text-decoration: underline;
+/* Назва компанії */
+.experience__company {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0; /* прибираємо стандартні відступи браузера */
 }
 
-.contact-item span {
-    color: var(--text-secondary);
-    font-weight: 500;
+/* Список інформації */
+.experience__info {
+    list-style: none; /* прибрати маркери списку */
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* відступ між рядками */
 }
 
-.contact-item small {
+/* Один рядок інформації */
+.experience__item {
+    display: flex;
+    gap: 8px; /* проміжок між міткою і значенням */
+    font-size: 15px;
+}
+
+/* Ліва частина рядка: назва поля */
+.experience__label {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Права частина: значення */
+.experience__value {
+    color: #555;
+}
+
+/* 📱 Адаптив (мобільні): логотип зверху, текст під */
+@media (max-width: 600px) {
+    .experience {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+
+
+
+
+
+/* Основний блок */
+.portfolio {
+    padding: 80px 0;
+    text-align: center; /* Центруємо заголовок */
+}
+
+/* Заголовок */
+.portfolio h1 {
+    font-size: 32px;
+    margin-bottom: 50px;
+}
+
+/* Сітка для робіт */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 картинки в ряд */
+    gap: 40px; /* Відступи між картинками */
+    justify-content: center; /* Центруємо всередині екрана */
+}
+
+/* Картка роботи */
+.portfolio-item {
+    position: relative;
     display: block;
-    color: var(--text-muted);
-    font-size: 0.875rem;            /* Менший шрифт для додаткової інформації */
-    margin-top: 0.25rem;
+    overflow: hidden; /* Щоб збільшення зображення не вилізало */
+    max-width: 500px; /* Щоб тримати розмір */
+    margin: 0 auto; /* Центрування */
 }
 
-.contact-icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 0.5rem;
-    stroke: var(--accent-color);
-    fill: none;
-    vertical-align: middle;
-    flex-shrink: 0;
-    display: inline-block;
-}
-/*#endregion */
-
-/*#region ФУТЕР (ПІДВАЛ САЙТУ) */
-footer {
-    background: var(--bg-secondary); /* Темний фон для футера */
-    color: var(--text-secondary);   /* Світлий текст */
-    padding: 2rem 0;                /* Вертикальні відступи */
-    margin-top: 4rem;
-    width: 100%;                    /* Повна ширина екрану */
-    font-size: 0.85rem;
+/* Зображення */
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s ease; /* Плавне збільшення */
 }
 
-/* Контейнер для контенту футера */
-footer {
+/* Тег у лівому верхньому куті */
+.tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 4px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    z-index: 3; /* Щоб був поверх картинки */
+}
+
+/* Оверлей, який з’явиться при наведенні */
+.overlay {
+    position: absolute;
+    inset: 0; /* top:0, right:0, bottom:0, left:0 */
+    background: rgba(0, 0, 0, 0.55); /* Підзатемнення */
     display: flex;
-    justify-content: space-between; /* LinkedIn зліва, копірайт справа */
+    justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;                 /* Центрування контенту футера */
-    padding-left: 2rem;
-    padding-right: 2rem;
+    opacity: 0; /* Спочатку приховано */
+    transition: opacity 0.4s ease;
 }
 
-.social-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+/* Заголовок роботи всередині оверлею */
+.overlay h3 {
+    color: white;
+    font-size: 22px;
+    pointer-events: none; /* Щоб не заважав кліку */
 }
 
-.social-links a:hover {
-    color: var(--text-secondary);   /* Світліший колір при наведенні */
+/* Анімація при ховері */
+.portfolio-item:hover img {
+    transform: scale(1.07); /* Трішки збільшити */
 }
 
-.social-links svg {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background-color: var(--accent-color);
-    padding: 6px;
-    transition: transform 0.3s ease;
-    fill: white;
+.portfolio-item:hover .overlay {
+    opacity: 1; /* Показуємо оверлей */
 }
 
-.social-links a:hover svg {
-    transform: scale(1.1);
-    background-color: var(--accent-hover);
-    fill: white;
+/* 3-й рядок, одна картинка по центру */
+.center-row {
+    grid-column: span 2; /* Займає два стовпці */
+    max-width: 500px;
+    margin: 0 auto;
 }
-
-.copyright {
-    color: var(--text-muted);
-    font-size: 0.875rem;
-}
-/*#endregion */
-
-/*#region ВЕЛИКІ ЕКРАНИ (1920x1080+) */
-@media (min-width: 1920px) {
-    header {
-        padding: 2rem 0;
-    }
-    
-    header {
-        max-width: 1800px;          /* Більша ширина для великих екранів */
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-    
-    main {
-        max-width: 1800px;
-        padding: 0 4rem;
-    }
-    
-    .main-section {
-        padding: 6rem 0;            /* Більші відступи */
-    }
-    
-    .main-section h1 {
-        font-size: 4rem;            /* Більший заголовок */
-        margin-bottom: 2rem;
-    }
-    
-    .main-section p {
-        font-size: 1.5rem;
-        max-width: 800px;           /* Більша ширина тексту */
-        margin: 0 auto 3rem;
-    }
-    
-    .consultation-link {
-        padding: 1.25rem 2.5rem;    /* Більша кнопка */
-        font-size: 1.125rem;
-    }
-    
-    .contacts-section {
-        padding: 6rem 0;
-        max-width: 800px;           /* Більша картка контактів */
-    }
-    
-    .contacts-section h1 {
-        font-size: 3.5rem;
-        margin-bottom: 4rem;
-    }
-    
-    .contact-info {
-        padding: 3rem;
-    }
-    
-    .contact-item {
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-    }
-    
-    .contact-item strong {
-        font-size: 1.125rem;
-        margin-bottom: 0.75rem;
-    }
-    
-    .contact-item a,
-    .contact-item span {
-        font-size: 1.125rem;
-    }
-    
-    footer {
-        padding: 3rem 0;
-    }
-    
-    footer {
-        max-width: 1800px;          /* Більша ширина для великих екранів */
-        padding-left: 4rem;
-        padding-right: 4rem;
-    }
-    
-    .social-links a {
-        font-size: 1.125rem;
-    }
-    
-    .copyright {
-        font-size: 1rem;
-    }
-}
-/*#endregion */
-
-/*#region АДАПТИВ ДЛЯ ПЛАНШЕТІВ (768px) */
-@media (max-width: 768px) {
-    header {
-        padding: 1rem 0;
-        flex-direction: column;      /* Вертикальне розташування на планшетах */
-        gap: 1rem;
-    }
-    
-    header {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    nav ul {
-        gap: 1rem;
-    }
-    
-    .main-section h1 {
-        font-size: 2rem;            /* Менший заголовок */
-    }
-    
-    .main-section p {
-        font-size: 1.125rem;
-    }
-    
-    .contacts-section h1 {
-        font-size: 2rem;
-    }
-    
-    .contact-info {
-        padding: 1.5rem;
-    }
-    
-    footer {
-        flex-direction: column;      /* Вертикальне розташування */
-        gap: 1rem;
-        text-align: center;
-        padding: 1.5rem 0;
-    }
-    
-    footer {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-/*#endregion */
-
-/*#region АДАПТИВ ДЛЯ МОБІЛЬНИХ (480px) */
-@media (max-width: 480px) {
-    main {
-        padding: 0 1rem;            /* Менші відступи */
-    }
-    
-    .main-section {
-        padding: 2rem 0;
-    }
-    
-    .main-section h1 {
-        font-size: 1.75rem;         /* Ще менший заголовок */
-    }
-    
-    .consultation-link {
-        padding: 0.875rem 1.5rem;   /* Компактніша кнопка */
-        font-size: 0.875rem;
-    }
-    
-    .contacts-section {
-        padding: 2rem 0;
-    }
-    
-    .contacts-section h1 {
-        font-size: 1.75rem;
-    }
-}
-/*#endregion */
-
-/*#region АДАПТИВ ДЛЯ МАЛИХ МОБІЛЬНИХ (320px) */
-@media (max-width: 320px) {
-    header {
-        padding: 0.75rem 0;
-    }
-    
-    header {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-    }
-    
-    .logo a {
-        font-size: 1.25rem;         /* Менший логотип */
-    }
-    
-    nav ul {
-        gap: 0.75rem;               /* Менші відступи між пунктами меню */
-    }
-    
-    nav a {
-        font-size: 0.875rem;        /* Менший шрифт для навігації */
-    }
-    
-    main {
-        padding: 0 0.75rem;         /* Менші відступи */
-    }
-    
-    .main-section {
-        padding: 1.5rem 0;          /* Компактніші відступи */
-    }
-    
-    .main-section h1 {
-        font-size: 1.5rem;          /* Ще менший заголовок */
-        margin-bottom: 1rem;
-    }
-    
-    .main-section p {
-        font-size: 1rem;            /* Менший текст */
-        max-width: 100%;            /* Повна ширина на малих екранах */
-        margin: 0 auto 1.5rem;
-    }
-    
-    .consultation-link {
-        padding: 0.75rem 1.25rem;   /* Компактніша кнопка */
-        font-size: 0.8rem;
-        width: 100%;                /* Повна ширина кнопки */
-        max-width: 280px;           /* Обмеження максимальної ширини */
-    }
-    
-    .contacts-section {
-        padding: 1.5rem 0;
-    }
-    
-    .contacts-section h1 {
-        font-size: 1.5rem;          /* Менший заголовок контактів */
-        margin-bottom: 2rem;
-    }
-    
-    .contact-info {
-        padding: 1rem;              /* Менші відступи в картці */
-    }
-    
-    .contact-item {
-        margin-bottom: 1rem;
-        padding-bottom: 1rem;
-    }
-    
-    .contact-item strong {
-        font-size: 0.9rem;
-        margin-bottom: 0.25rem;
-    }
-    
-    .contact-item a,
-    .contact-item span {
-        font-size: 0.9rem;
-    }
-    
-    .contact-item small {
-        font-size: 0.75rem;
-    }
-    
-    footer {
-        padding: 1rem 0;
-        margin-top: 2rem;
-    }
-    
-    footer {
-        padding-left: 0.75rem;
-        padding-right: 0.75rem;
-    }
-    
-    .social-links a {
-        font-size: 0.875rem;
-    }
-    
-    .copyright {
-        font-size: 0.75rem;
-    }
-}
-/*#endregion */
